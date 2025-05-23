@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veriler Çözümleniyor</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telefonunuz Tarandı!</title>
   <style>
     body {
       background-color: black;
       color: #0f0;
       font-family: monospace;
-      font-size: 1.2rem;
       padding: 20px;
-      animation: shake 0.5s infinite;
+      animation: shake 0.4s infinite;
     }
     @keyframes shake {
       0% { transform: translate(1px, 1px); }
@@ -19,22 +18,45 @@
       100% { transform: translate(2px, 1px); }
     }
     .matrix {
-      white-space: pre;
-      overflow: hidden;
-      max-height: 90vh;
+      white-space: pre-wrap;
+      line-height: 1.2em;
+      animation: scroll 20s linear infinite;
+    }
+    @keyframes scroll {
+      0% { transform: translateY(100%); }
+      100% { transform: translateY(-100%); }
+    }
+    .warning {
+      font-size: 1.5em;
+      color: red;
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <h1>⚠️ Tüm verileriniz taranıyor...</h1>
-  <p>Lütfen bekleyin. Cihaz güvenli değil.</p>
+  <div class="warning">⚠️ TARAMA BAŞLADI - VERİLERİNİZ KOPYALANIYOR ⚠️</div>
   <div class="matrix">
-    <p>001100101010100010100111101010010101...</p>
-    <p>~ accessing /DCIM/ ~</p>
-    <p>~ accessing /WhatsApp/ ~</p>
-    <p>~ copying browser history... ~</p>
-    <p>⚠️ WARNING: Device compromised ⚠️</p>
-    <p>Şaka! Cihaz güvende ama dikkatli olun 😅</p>
+    Erişim başlatıldı...  
+    /DCIM klasörü taranıyor...  
+    WhatsApp mesajları analiz ediliyor...  
+    Konum bilgileri indiriliyor...  
+    Cihaz güvenliği: KIRILDI  
+    Uygulama listesi dışarı aktarılıyor...
+    -------------------------------------
+    📡  Bağlantı kuruldu: 83.91.**.**
+    🔒  Şifreleme devre dışı bırakıldı.
+    🧠  Kullanıcı davranışı öğreniliyor...
+    📷  Kamera erişimi deneniyor...
+    🎤  Mikrofon erişimi deneniyor...
+    📁  "Download" klasörü yedekleniyor...
+    -------------------------------------
+    ŞAKA! 😄 Cihazınıza hiçbir şey olmadı.
+    Ama bu sayfayı açmak için sadece bir QR kod okuttunuz.
+    Gerçek bir saldırıda bu bilgiler gerçekten ele geçirilebilirdi.
+    ❗ Lütfen her QR kodu okutmadan önce 2 kez düşünün.
   </div>
 </body>
 </html>
